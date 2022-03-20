@@ -75,7 +75,7 @@ function mainFunction() {
 // Input validator function
 function inputValidator(target_array, max_val, min_val) {
   target_array.forEach((Element, index)=> {
-    Element.addEventListener("change", ()=> {
+    Element.addEventListener("focusout", ()=> {
       if(parseInt(Element.value) > max_val) {
         alert(`Maximum value of this field is ${max_val}`);
         Element.value = max_val;
@@ -84,16 +84,26 @@ function inputValidator(target_array, max_val, min_val) {
         Element.value = min_val;
       }
     });
+
+    // Element.addEventListener("change", ()=> {
+    //   if(parseInt(Element.value) > max_val) {
+    //     alert(`Maximum value of this field is ${max_val}`);
+    //     Element.value = max_val;
+    //   } else if(parseInt(Element.value) < min_val) {
+    //     alert(`Minimum value of this field is ${min_val}`);
+    //     Element.value = min_val;
+    //   }
+    // });
     
-    Element.addEventListener("keyup", ()=> {
-      if(parseInt(Element.value) > max_val) {
-        alert(`Maximum value of this field is ${max_val}`);
-        Element.value = max_val;
-      } else if(parseInt(Element.value) < min_val) {
-        alert(`Minimum value of this field is ${min_val}`);
-        Element.value = min_val;
-      }
-    });
+    // Element.addEventListener("keyup", ()=> {
+    //   if(parseInt(Element.value) > max_val) {
+    //     alert(`Maximum value of this field is ${max_val}`);
+    //     Element.value = max_val;
+    //   } else if(parseInt(Element.value) < min_val) {
+    //     alert(`Minimum value of this field is ${min_val}`);
+    //     Element.value = min_val;
+    //   }
+    // });
   });
 }
 
