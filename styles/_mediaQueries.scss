@@ -1,0 +1,105 @@
+@media only screen and (max-width: 1300px) {
+  h1#mainHeading {
+    font-size: 2.5rem;
+  }  
+  #inputArea > * {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  #inputAreaColumnNames {
+    font-size: 1.125rem;
+  }
+  .subject_titles {
+    font-size: 1rem;
+  }
+  #resultDiv {
+    font-size: 1.125rem;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #welcome {
+    font-size: 4rem;
+  }
+  #startCalcBtn {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  h1#mainHeading {
+    font-size: 2rem;
+  }  
+  #inputArea {
+    width: 90%;
+  }
+  #inputArea > * {
+    grid-template-columns: 3fr 2fr 2fr 2fr;
+  }
+  button#calculate {
+    font-size: 1.25rem;
+  }
+  #resultDiv {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  h1#mainHeading {
+    font-size: 1.8rem;
+  }
+  #inputArea > * {
+    gap: 1rem;
+  }
+  #inputAreaColumnNames {
+    font-size: 1rem;
+  }
+  .subject_titles {
+    font-size: .9rem;
+  }
+  #inputArea > * {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  button#calculate {
+    font-size: 1.125rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #welcome {
+    font-size: 3rem;
+  }
+  #startCalcBtn {
+    font-size: 1.125rem;
+  }
+  
+  #inputArea {
+    width: 100%;
+  }
+  #inputArea > * {
+    padding: .25rem .5rem;
+    gap: .5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #welcome {
+    font-size: 2.5rem;
+  }
+  #startCalcBtn {
+    font-size: 1rem;
+  }
+  #resultDiv {
+    font-size: .8rem;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1rem;
+  }
+}

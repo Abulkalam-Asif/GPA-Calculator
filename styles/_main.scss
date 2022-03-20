@@ -1,0 +1,169 @@
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+$orange-red: rgb(206, 55, 0);
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifl;
+}
+#welcomeSec {
+  position: relative;
+  transition: .5s left;
+  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  #welcomeDiv {
+    width: fit-content;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+#welcomeSec.hidden {
+  top: -100vh;
+}
+#welcomeSec.visible {
+  top: 0;
+}
+
+#welcome {
+  color: $orange-red;
+  font-size: 5rem;
+}
+#startCalcBtn {
+  background: #fff;
+  color: $orange-red;
+  border: 2px solid $orange-red;
+  font-size: 2rem;
+  border-radius: 5rem; 
+  padding: .5em 1em;
+  transition: .5s color, .5s background;
+  animation: buttonAnim 1s infinite;
+  &:hover {
+    background: $orange-red;
+    color: #fff;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 2rem;
+  position: relative;
+  transition: .5s top;
+}
+.container.hidden {
+  top: -500vh;
+}
+.container.visible {
+  top: 0;
+}
+
+h1#mainHeading {
+  width: fit-content;
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  color: $orange-red;
+}
+
+#inputArea {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#inputArea > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: .35rem 1rem;
+}
+.subject_divs:nth-child(2n+3) {
+  background-color: rgb(255, 240, 236);
+}
+.subject_divs:hover {
+  background-color: rgb(255, 206, 194);
+}
+
+#inputAreaColumnNames {
+  font-weight: 700;
+  background: $orange-red;
+  color: #fff;
+  font-size: 1.25rem;
+}
+#inputAreaColumnNames:nth-child(n+2) {
+  width: 40%;
+}
+
+.subject_titles {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+input[type="number"] {
+  padding: .3rem 1rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+input[type="number"]:focus {
+  border: 2px solid $orange-red;
+  outline: none;
+}
+  
+#resultArea {
+  width: 80%;
+  margin: 1rem auto;
+}
+#resultDiv {
+  width: fit-content;
+  margin: 2rem 0 0 0;
+  font-size: 1.25rem;
+}
+#displayGPA, #displayGrade {
+  font-size: 1.5rem;
+  background: $orange-red;
+  color: #fff;
+  border-radius: 10rem;
+  padding: .3em .7em;
+}
+
+button#calculate {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: .3em 1em;
+  border-radius: 3rem;
+  border: 2px solid $orange-red;
+  color: $orange-red;
+  background: #fff;
+  transition: background .3s, color .3s;
+  animation: buttonAnim 1s infinite;
+}
+button#calculate:hover {
+  color: #fff;
+  background: $orange-red;
+}

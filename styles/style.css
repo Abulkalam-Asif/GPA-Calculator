@@ -1,0 +1,404 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes buttonAnim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes buttonAnim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifl;
+}
+
+#welcomeSec {
+  position: relative;
+  -webkit-transition: .5s left;
+  transition: .5s left;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+#welcomeSec #welcomeDiv {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+#welcomeSec.hidden {
+  top: -100vh;
+}
+
+#welcomeSec.visible {
+  top: 0;
+}
+
+#welcome {
+  color: #ce3700;
+  font-size: 5rem;
+}
+
+#startCalcBtn {
+  background: #fff;
+  color: #ce3700;
+  border: 2px solid #ce3700;
+  font-size: 2rem;
+  border-radius: 5rem;
+  padding: .5em 1em;
+  -webkit-transition: .5s color, .5s background;
+  transition: .5s color, .5s background;
+  -webkit-animation: buttonAnim 1s infinite;
+          animation: buttonAnim 1s infinite;
+}
+
+#startCalcBtn:hover {
+  background: #ce3700;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 2rem;
+  position: relative;
+  -webkit-transition: .5s top;
+  transition: .5s top;
+}
+
+.container.hidden {
+  top: -500vh;
+}
+
+.container.visible {
+  top: 0;
+}
+
+h1#mainHeading {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  color: #ce3700;
+}
+
+#inputArea {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#inputArea > * {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: .35rem 1rem;
+}
+
+.subject_divs:nth-child(2n+3) {
+  background-color: #fff0ec;
+}
+
+.subject_divs:hover {
+  background-color: #ffcec2;
+}
+
+#inputAreaColumnNames {
+  font-weight: 700;
+  background: #ce3700;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+#inputAreaColumnNames:nth-child(n+2) {
+  width: 40%;
+}
+
+.subject_titles {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  padding: .3rem 1rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type="number"]:focus {
+  border: 2px solid #ce3700;
+  outline: none;
+}
+
+#resultArea {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+#resultDiv {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem 0 0 0;
+  font-size: 1.25rem;
+}
+
+#displayGPA, #displayGrade {
+  font-size: 1.5rem;
+  background: #ce3700;
+  color: #fff;
+  border-radius: 10rem;
+  padding: .3em .7em;
+}
+
+button#calculate {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: .3em 1em;
+  border-radius: 3rem;
+  border: 2px solid #ce3700;
+  color: #ce3700;
+  background: #fff;
+  -webkit-transition: background .3s, color .3s;
+  transition: background .3s, color .3s;
+  -webkit-animation: buttonAnim 1s infinite;
+          animation: buttonAnim 1s infinite;
+}
+
+button#calculate:hover {
+  color: #fff;
+  background: #ce3700;
+}
+
+@media only screen and (max-width: 1300px) {
+  h1#mainHeading {
+    font-size: 2.5rem;
+  }
+  #inputArea > * {
+    -ms-grid-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  #inputAreaColumnNames {
+    font-size: 1.125rem;
+  }
+  .subject_titles {
+    font-size: 1rem;
+  }
+  #resultDiv {
+    font-size: 1.125rem;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #welcome {
+    font-size: 4rem;
+  }
+  #startCalcBtn {
+    font-size: 1.5rem;
+  }
+  .container {
+    width: 100%;
+  }
+  h1#mainHeading {
+    font-size: 2rem;
+  }
+  #inputArea {
+    width: 90%;
+  }
+  #inputArea > * {
+    -ms-grid-columns: 3fr 2fr 2fr 2fr;
+        grid-template-columns: 3fr 2fr 2fr 2fr;
+  }
+  button#calculate {
+    font-size: 1.25rem;
+  }
+  #resultDiv {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  h1#mainHeading {
+    font-size: 1.8rem;
+  }
+  #inputArea > * {
+    gap: 1rem;
+  }
+  #inputAreaColumnNames {
+    font-size: 1rem;
+  }
+  .subject_titles {
+    font-size: .9rem;
+  }
+  #inputArea > * {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  button#calculate {
+    font-size: 1.125rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #welcome {
+    font-size: 3rem;
+  }
+  #startCalcBtn {
+    font-size: 1.125rem;
+  }
+  #inputArea {
+    width: 100%;
+  }
+  #inputArea > * {
+    padding: .25rem .5rem;
+    gap: .5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #welcome {
+    font-size: 2.5rem;
+  }
+  #startCalcBtn {
+    font-size: 1rem;
+  }
+  #resultDiv {
+    font-size: .8rem;
+  }
+  #displayGPA, #displayGrade {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
