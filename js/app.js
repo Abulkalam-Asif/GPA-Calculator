@@ -47,7 +47,7 @@ function mainFunction() {
   addElementsToArray(allInputTags, allInputTags_arr);
   // Checking if all the fields are filled with valid input
   let isCorrect  = allInputTags_arr.every((element)=> {
-    return element >= 1 && element != NaN;
+    return element != NaN;
   });
 
   if (isCorrect == true) { 
