@@ -23,7 +23,7 @@ let credit_hours = document.querySelectorAll(".credit_hours");
 let allInputTags = document.querySelectorAll("input");
 
 // Input validation
-inputValidator(total_marks, 100, 0);
+inputValidator(total_marks, 100, 50);
 inputValidator(obtained_marks, 100, 0);
 inputValidator(credit_hours, 3, 0.5);
 
