@@ -29,28 +29,29 @@ inputValidator(credit_hours, 3, 0.5);
 
 // Main function that triggers when the user presses "Calculate" button
 function mainFunction() {
-  let total_marks_arr = []; 
-  let obtained_marks_arr = [];
-  let credit_hours_arr = [];
   let allInputTags_arr = [];
-
-  let percentage_arr = [];
-  let percentage_GPA_arr = []; // Based on percentage i.e. 4 above 85% and 3.7 above 80% etc.
-  let subject_GPA_arr = []; // Percentage GPA multiplied by credit hours
-
-  let subjectGPASum = 0;
-  let creditHoursSum = 0;
-  
-  let finalGPA = 0;
-  let finalGrade = "";
-
   addElementsToArray(allInputTags, allInputTags_arr);
   // Checking if all the fields are filled with valid input
-  let isCorrect  = allInputTags_arr.every((element)=> {
-    return element != NaN;
+
+  let isCorrect  = Array.from(allInputTags).every((element)=> {
+    return element.value.length != 0;
   });
 
   if (isCorrect == true) { 
+    let total_marks_arr = []; 
+    let obtained_marks_arr = [];
+    let credit_hours_arr = [];
+
+    let percentage_arr = [];
+    let percentage_GPA_arr = []; // Based on percentage i.e. 4 above 85% and 3.7 above 80% etc.
+    let subject_GPA_arr = []; // Percentage GPA multiplied by credit hours
+
+    let subjectGPASum = 0;
+    let creditHoursSum = 0;
+    
+    let finalGPA = 0;
+    let finalGrade = "";
+
     addElementsToArray(total_marks, total_marks_arr);
     addElementsToArray(obtained_marks, obtained_marks_arr);
     addElementsToArray(credit_hours, credit_hours_arr);
@@ -76,30 +77,32 @@ function mainFunction() {
 function inputValidator(target_array, max_val, min_val) {
   target_array.forEach((Element, index)=> {
     Element.addEventListener("focusout", ()=> {
-      if(parseInt(Element.value) > max_val) {
+      if(parseFloat(Element.value) > max_val) {
+        console.log(`${Element.value} > ${max_val}`);
         alert(`Maximum value of this field is ${max_val}`);
         Element.value = max_val;
-      } else if(parseInt(Element.value) < min_val) {
+      } else if(parseFloat(Element.value) < min_val) {
+        console.log(`${Element.value} < ${min_val}`);
         alert(`Minimum value of this field is ${min_val}`);
         Element.value = min_val;
       }
     });
 
     // Element.addEventListener("change", ()=> {
-    //   if(parseInt(Element.value) > max_val) {
+    //   if(parseFloat(Element.value) > max_val) {
     //     alert(`Maximum value of this field is ${max_val}`);
     //     Element.value = max_val;
-    //   } else if(parseInt(Element.value) < min_val) {
+    //   } else if(parseFloat(Element.value) < min_val) {
     //     alert(`Minimum value of this field is ${min_val}`);
     //     Element.value = min_val;
     //   }
     // });
     
     // Element.addEventListener("keyup", ()=> {
-    //   if(parseInt(Element.value) > max_val) {
+    //   if(parseFloat(Element.value) > max_val) {
     //     alert(`Maximum value of this field is ${max_val}`);
     //     Element.value = max_val;
-    //   } else if(parseInt(Element.value) < min_val) {
+    //   } else if(parseFloat(Element.value) < min_val) {
     //     alert(`Minimum value of this field is ${min_val}`);
     //     Element.value = min_val;
     //   }
@@ -110,7 +113,7 @@ function inputValidator(target_array, max_val, min_val) {
 // Takes elements from nodeList given by querySelectorAll and adds them to corresponding array in the form of numbers.
 function addElementsToArray(nodeList, returningArray) {
   for(let i = 0; i <= nodeList.length - 1; i++) {
-    returningArray[i] = parseInt(nodeList[i].value);
+    returningArray[i] = parseFloat(nodeList[i].value);
   }
   return returningArray;
 }
