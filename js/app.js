@@ -25,7 +25,7 @@ let allInputTags = document.querySelectorAll("input");
 // Input validation
 inputValidator(total_marks, 100, 0);
 inputValidator(obtained_marks, 100, 0);
-inputValidator(credit_hours, 3, 0);
+inputValidator(credit_hours, 3, 0.5);
 
 // Main function that triggers when the user presses "Calculate" button
 function mainFunction() {
