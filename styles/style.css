@@ -295,6 +295,32 @@ button#calculate:hover {
   background: #ce3700;
 }
 
+footer {
+  background-color: #ffcec2;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+
+footer > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+footer > div a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ce3700;
+  font-weight: 700;
+}
+
+footer > div a:hover {
+  text-decoration: underline;
+  -webkit-transition: .3 all;
+  transition: .3 all;
+}
+
 @media only screen and (max-width: 1300px) {
   h1#mainHeading {
     font-size: 2.5rem;
