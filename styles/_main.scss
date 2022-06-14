@@ -160,7 +160,7 @@ button#calculate {
   border: 2px solid $orange-red;
   color: $orange-red;
   background: #fff;
-  transition: background .3s, color .3s;
+  transition: background-color .3s, color .3s;
   animation: buttonAnim 1s infinite;
 }
 button#calculate:hover {
@@ -175,9 +175,10 @@ footer {
 footer > div {
   width: fit-content;
   margin: auto;
+  font-size: 1.3rem;
   a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: $orange-red;
     font-weight: 700;
     &:hover {
